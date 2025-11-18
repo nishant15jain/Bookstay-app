@@ -32,7 +32,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div onClick={onRent} className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer">
-          Airbnb your home
+          BookStay your home
         </div>
         <div className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full hover:shadow-md transition cursor-pointer">
           <AiOutlineMenu size={24} onClick={toggleOpen} />
@@ -51,7 +51,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
                 <MenuItem title="My favorites" onClick={() => router.push('/favorites')} />
                 <MenuItem title="My reservations" onClick={() => router.push('/reservations')} />
                 <MenuItem title="My properties" onClick={() => router.push('/properties')} />
-                <MenuItem title="Airbnb your home" onClick={onRent} />
+                <MenuItem title="BookStay your home" onClick={onRent} />
               </div>
             ) : (
               <>
