@@ -1,7 +1,6 @@
-import { Listing, Reservation } from "../generated/prisma/client";
-import { UserModel } from "../generated/prisma/models";
+import { Listing, Reservation, User } from "../generated/prisma/client";
 
-export type SafeUser = Omit<UserModel, "createdAt" | "updatedAt" | "emailVerified"> & {
+export type SafeUser = Omit<User, "createdAt" | "updatedAt" | "emailVerified"> & {
     createdAt: string;
     updatedAt: string;
     emailVerified: string | null;
