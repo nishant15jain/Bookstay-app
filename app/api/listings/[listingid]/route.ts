@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { client } from "@/libs/prismadb";
 import { getCurrentUser } from "@/app/actions/getCurrentUser";
 
-export async function DELETE(request: NextRequest, { params }: { params: { listingid: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ listingid: string }> }) {
     const currentUser = await getCurrentUser();
     if (!currentUser) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

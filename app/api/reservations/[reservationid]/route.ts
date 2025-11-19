@@ -6,7 +6,7 @@ interface IParams {
     reservationid: string;
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: IParams }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<IParams> }) {
     const currentUser = await getCurrentUser();
     if (!currentUser) {
         return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
